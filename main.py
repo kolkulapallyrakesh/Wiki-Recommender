@@ -58,7 +58,7 @@ if target_category:
     df, similarity_matrix = fetch_and_vectorize_category(target_category, max_pages)
     
     if df is not None and similarity_matrix is not None:
-        st.success(f"✅ Successfully auto-fetched {len(df)} live articles from **{target_category}**!")
+        st.success(f"Successfully auto-fetched {len(df)} live articles from **{target_category}**!")
         all_titles = df['title'].tolist()
         selected_title = st.selectbox("Select an article to explore similarities:", options=all_titles)
         
@@ -68,7 +68,7 @@ if target_category:
             sorted_scores = sorted(similarity_scores, key=lambda x: x[1], reverse=True)
             top_recommendations = sorted_scores[1:num_recommendations + 1]
             
-            st.subheader(f"✨ Top Recommendations for '{selected_title}'")
+            st.subheader(f"Top Recommendations for '{selected_title}'")
             st.write("---")
             
             for rank, (i, score) in enumerate(top_recommendations, 1):
