@@ -1,7 +1,7 @@
 
 import streamlit as st
 import pandas as pd
-import wikipedia-api
+import wikipediaapi
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 st.set_page_config(page_title="Dynamic Wiki Recommender", page_icon="🌐", layout="centered")
